@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 
 namespace WageCalculator
 {
     internal class Program
     {
-        public static int Earned(int c)
+        public static int Earned(int todaysEarning)
         {
             Random rnd = new Random();
             Console.WriteLine("The Employee is Present.");
@@ -15,50 +15,50 @@ namespace WageCalculator
             {
                 case 0:
                     Console.WriteLine("The Employee didn't earn money today as he didn't work at all.");
-                    Console.WriteLine("Todays Earning=\t" + c + "\n");
+                    Console.WriteLine("Todays Earning=\t" + todaysEarning + "\n");
                     break;
 
                 case 4:
                     Console.WriteLine("The Employee earned 80Rs today as he worked for 4 Hours Half Time.");
-                    c += 80;
-                    Console.WriteLine("Todays Earning=\t" + c + "\n");
+                    todaysEarning += 80;
+                    Console.WriteLine("Todays Earning=\t" + todaysEarning + "\n");
                     break;
 
                 case 8:
                     Console.WriteLine("The Employee earned 160Rs today as he worked for 8 Hours Full Time.");
-                    c += 160;
-                    Console.WriteLine("Todays Earning=\t" + c + "\n");
+                    todaysEarning += 160;
+                    Console.WriteLine("Todays Earning=\t" + todaysEarning + "\n");
 
                     break;
             }
-            return c;
+            return todaysEarning;
         }
 
         static void Main(string[] args)
         {
             Random rnd = new Random();
-            int t = 21;
-            int sum = 0;
-            for (int i = 1; i < t; i++)
+            int Days = 20;
+            int TotalEarning = 0;
+            for (int Day = 1; Day <= Days; Day++)
             {
                 {
-                    int c = 0;
+                    int DailyEarnings = 0;
                     int n = rnd.Next(0, 2);
                     if (n == 0)
                     {
-                        Console.WriteLine("Day" + i);
+                        Console.WriteLine("Day" + Day);
                         Console.WriteLine("The Employee is Absent.\n");
                     }
                     else
                     {
 
-                        Console.WriteLine("Day" + i);
-                        c = Earned(c);
+                        Console.WriteLine("Day" + Day);
+                        DailyEarnings = Earned(DailyEarnings);
                     }
-                    sum += c;
+                    TotalEarning += DailyEarnings;
                 }
             }
-                Console.WriteLine("Total Money earned by the employee is\t" + sum + "Rs");
+                Console.WriteLine("Total Money earned by the employee is\t" + TotalEarning + "Rs");
 
                 Console.ReadKey();
             }
