@@ -21,11 +21,11 @@ namespace WageCalculator
                 int h = arr[rnd.Next(arr.Length)];
                 switch (h)
                 {
-                    case 0: Console.WriteLine("The Employee doesn't earned money today as he didn't worked at all."); break;
+                    case 0: Console.WriteLine("The Employee didn't worked at all."); break;
 
-                    case 4: Console.WriteLine("The Employee earned 80Rs today as he worked for 4 Hours Half Time."); break;
+                    case 4: Console.WriteLine("The Employee worked for 4 Hours Half Time."); break;
 
-                    case 8: Console.WriteLine("The Employee earned 160Rs today as he worked for 8 Hours Full Time."); break;
+                    case 8: Console.WriteLine("The Employee worked for 8 Hours Full Time."); break;
 
                 }
 
